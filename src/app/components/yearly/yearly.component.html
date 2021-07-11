@@ -1,0 +1,83 @@
+<div class="yearly-container">
+    <div class="dropdown-tabs-container">
+        <div class="dropdown-container">
+            <mat-form-field appearance="fill">
+                <mat-select style="color: #ffffff;" [(ngModel)]='selectedGrade' (selectionChange)="onGradeChange($event.value)">
+                    <mat-option *ngFor="let gradeData of yearlyData" value="{{gradeData.grade}}">{{gradeData.grade}}</mat-option>
+                </mat-select>
+                </mat-form-field>                
+        </div>
+        <div *ngIf='currentGradeData' class="tabs-container">
+            <mat-tab-group mat-align-tabs="start" [disableRipple]=true mat-align-tabs="start" [disableRipple]=true (selectedTabChange)="onTabChange($event)">
+                <mat-tab *ngFor='let data of currentGradeArray' label="{{data.name}}">
+                    <div class='tab-content'>
+                        <div class="content-section">
+                            <div class="title">
+                                Total Sessions
+                            </div>
+                            <div class="value">{{data.value.total_sessions}}</div>
+                        </div>
+                        <div class="content-section">
+                            <div class="title">
+                                Online Pre Assessments
+                            </div>
+                            <div class="value">{{data.value.online_pre_assignments}}</div>
+                        </div>
+                        <div class="content-section">
+                            <div class="title">
+                                Online Post Assessments
+                            </div>
+                            <div class="value">{{data.value.online_post_assignments}}</div>
+                        </div>
+                        <div class="content-section">
+                            <div class="title">
+                                Online Practice
+                            </div>
+                            <div class="value">{{data.value.online_assignments}}</div>
+                        </div>
+                        <div class="content-section">
+                            <div class="title">
+                                Online Tests
+                            </div>
+                            <div class="value">{{data.value.online_tests}}</div>
+                        </div>
+                        <div class="content-section">
+                            <div class="title">
+                                Career Counselling Sessions with Edu Coach
+                            </div>
+                            <div class="value">{{data.value.career_counselling_sessions}}</div>
+                        </div>
+                    </div>
+                    <div class="title title-container">Course Topics Include</div>
+                    <div class='syllabus-container'>
+                        <div class='syllabus-row'>
+                            <div title="{{syllabus}}" class="syllabus-name" *ngFor="let syllabus of syllabusArray">
+                                <span>{{syllabus}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <div class="upper-row">
+                            <div class="section">
+                                <div class='large-text'>Vacant Seats <span class="yellow-text">{{data.value.seats}} seats</span></div>
+                                <div class='small-text'>Not a classroom, but 1:1 sessions</div>
+                            </div>
+                            <div class="section">
+                                <div class='large-text'>Subscription cost: <span class="yellow-text">₹{{data.value.price/2}} </span><span class='yellow-text line-through'>₹ {{data.value.price}}</span></div>
+                                <div class='small-text'>This cost is inclusive of the tablet cost.<br>
+                                Per session cost is ₹{{data.value.per_class_price.substring(0, data.value.per_class_price.indexOf("."))}}.</div>
+                            </div>
+                            <div class="section right-align">
+                                <button class="book-button">Book Now</button>
+                            </div>
+                        </div>
+                        <div class="lower-row">
+                            <div class="lower-text">You can also avail a 8 inch and 10 inch tablet with your subscription.</div>
+                            <div class="lower-small">Guaranteed <span class="small-underline-text">terms & conditions</span> apply*</div>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

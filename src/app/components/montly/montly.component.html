@@ -1,0 +1,50 @@
+<div class="yearly-container">
+    <div class="dropdown-tabs-container">
+        <div class="dropdown-container">
+            <mat-form-field appearance="fill">
+                <mat-select style="color: #ffffff;" [(ngModel)]='selectedGrade' (selectionChange)="onGradeChange($event.value)">
+                    <mat-option *ngFor="let gradeData of monthlyData" value="{{gradeData.grade}}">{{gradeData.grade}}</mat-option>
+                </mat-select>
+                </mat-form-field>                
+        </div>
+        <div *ngIf='currentGradeData' class="tabs-container">
+            <div class="rows-container">
+                <div class="monthly-row" *ngFor="let gradeData of currentGradeArray">
+                    <div class="radio-container">
+                        <mat-radio-button value="1" color="primary">
+                          </mat-radio-button>
+                    </div>
+                    <div class="section-parts">
+                        <div class="large-text">{{gradeData.value.valid}}</div>
+                        <div class="small-text">{{gradeData.value.refund}}</div>
+                    </div>
+                    <div class="section-parts">
+                        <div class="large-text"><span class="yellow-text">₹{{(gradeData.value.price*(100 - gradeData.value.discount))/100}} </span>
+                            <span class="yellow-text line-through">₹{{gradeData.value.price}}</span></div>
+                        <div class="small-text highlight">{{gradeData.value.discount}}% OFF</div>
+                    </div>
+                    <div class="section-parts">
+                        <div class="large-text">₹ {{gradeData.value.per_class_price}} per session</div>
+                        <div class="small-text">{{gradeData.value.total_sessions}} Sessions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div class="upper-row">
+                <div class="section section-one-width">
+                    <div class='large-text'>Monthly classes let you choose<br> your own course topics</div>
+                </div>
+                <div class="section section-two-width">
+                    <div class='large-text'>Each session lasts<br> 45 minutes</div>
+                </div>
+                <div class="section section-two-width right-align">
+                    <button class="book-button">Book Now</button>
+                </div>
+            </div>
+            <div class="lower-row">
+                <div class="lower-small">Refund same day <span class="small-underline-text">terms & conditions</span> apply*</div>
+            </div>
+        </div>
+    </div>
+</div>

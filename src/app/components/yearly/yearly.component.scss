@@ -1,0 +1,172 @@
+.yearly-container {
+    .dropdown-tabs-container {
+        .dropdown-container {
+            margin: 10px 0 0 0;
+            width: 25%;
+            background: transparent !important;
+            color: #ffffff;
+            padding-right: 20px;
+    padding-left: 20px;
+        }
+
+        .tabs-container {
+            ::ng-deep.mat-tab-header {
+                padding-top: 0px !important;
+            }
+            .tab-content {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                padding-right: 20px;
+                padding-left: 20px;
+
+                .content-section {
+                    .title {
+                        color: #ffffff;
+                        font-weight: bold;
+                        font-size: 20px;
+                        margin-bottom: 5px;
+                    }
+
+                    .value {
+                        color: #fccc07;
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .title-container {
+                padding-right: 20px;
+    padding-left: 20px;
+            }
+
+            .syllabus-container {
+                padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+
+                .syllabus-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                .syllabus-name {
+                    flex-grow: 1;
+                    width: 33%;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    color: #ffffff;
+                }
+            }
+
+            .footer-section {
+                background: #0b2e94;
+                padding: 20px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+
+                .upper-row {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .right-align {
+                        display: flex;
+    justify-content: flex-end;
+    align-items: end;
+                    }
+
+                    .section {
+                        flex-grow: 1;
+                        width: 33%;
+
+                        .large-text {
+                            font-size: 22px;
+                            font-weight: 500;
+                            color: #ffffff;
+
+                            .yellow-text {
+                                color: #fccc07; 
+                            }
+
+                            .line-through {
+                                text-decoration: line-through;
+                                text-decoration-color: #ffffff;
+                                font-size: 16px;
+                            }
+                        }
+
+                        .small-text {
+                            color: #ffffff;
+                            font-size: 14px;
+                            margin-top: 10px;
+                        }
+
+                        .book-button {
+                            background: #fccc07;
+                            padding: 10px 50px;
+                            color: #000000;
+                            border-radius: 25px;
+                            font-weight: 700;
+                            border: none;
+                        }
+                    }
+                }
+
+                .lower-row {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    align-items: baseline;
+
+                    .lower-text {
+                        color: #ffffff;
+                        font-size: 18px;
+                    }
+
+                    .lower-small {
+                        color: #ffffff;
+                        font-size: 12px;
+                    }
+
+                    .small-underline-text {
+                        text-decoration: underline;
+                        text-decoration-color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    .tab-content {
+        display: block !important;
+    }
+
+    .syllabus-row {
+        display: block !important;
+    }
+
+    .syllabus-name {
+        width: 100% !important;
+    }
+
+    .upper-row {
+        display: block !important;
+
+        .section {
+            width: 100% !important;
+        }
+
+        .right-align {
+            justify-content: start !important;
+        }
+    }
+
+    .lower-row {
+        display: block !important;
+    }
+ }

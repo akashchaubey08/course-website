@@ -1,0 +1,73 @@
+.app-container {
+    padding: 10px;
+    border-radius: 10px;
+
+    .header-section {
+        .heading-content {
+            width: 50%;
+            margin-left: 5%;
+            background:#fccc07;
+            text-align: center;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            padding: 10px 0;
+        }
+    }
+
+    .middle-footer-container {
+        // background: #0b2f90;
+        border-radius: 10px;
+        // height: 90vh;
+    }
+
+    .middle-section {
+        background: #6053c9;
+        border-radius: 10px;
+        
+        ::ng-deep .mat-tab-header {
+            padding-top: 20px;
+        }
+
+        ::ng-deep {
+
+            .mat-select-value {
+                color: #ffffff;
+            }
+            .mat-select-arrow {
+                color: #ffffff;
+            }
+
+            .mat-select-arrow-wrapper {
+                vertical-align: bottom;
+            }
+
+            .mat-form-field-flex {
+                background-color: transparent !important;
+                border-bottom: 2px solid #ffffff !important;
+            }
+
+            .mat-tab-labels {
+                .mat-tab-label {
+                    color: #ffffff;
+                    min-width: 120px;
+                    padding: 15px;
+                    opacity: 1;
+                    margin-right: 10px;
+                    font-size: 20px;
+                    border-radius: 15px;
+                }
+
+                .mat-tab-label-active {
+                    background: #0b2e94;
+                }
+            }
+        }
+    }
+    .footer-section {
+        padding: 20px;
+    }
+}
+
+.tab-section {
+    border-radius: 10px;
+}
